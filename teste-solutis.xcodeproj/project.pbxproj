@@ -10,10 +10,13 @@
 		8F6A512F84D754F9E148B402 /* Pods_teste_solutis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EFBBC2B76D0F24384C56F09 /* Pods_teste_solutis.framework */; };
 		BA6F48CA26DD481600693876 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F48C926DD481600693876 /* AppDelegate.swift */; };
 		BA6F48CC26DD481600693876 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F48CB26DD481600693876 /* SceneDelegate.swift */; };
-		BA6F48CE26DD481600693876 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F48CD26DD481600693876 /* ViewController.swift */; };
+		BA6F48CE26DD481600693876 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F48CD26DD481600693876 /* LoginViewController.swift */; };
 		BA6F48D126DD481600693876 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA6F48CF26DD481600693876 /* Main.storyboard */; };
 		BA6F48D326DD481700693876 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA6F48D226DD481700693876 /* Assets.xcassets */; };
 		BA6F48D626DD481700693876 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA6F48D426DD481700693876 /* LaunchScreen.storyboard */; };
+		BA6F48E126DD492600693876 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F48E026DD492600693876 /* User.swift */; };
+		BA6F48E326DD4A1F00693876 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F48E226DD4A1F00693876 /* Login.swift */; };
+		BA6F48E526DD4B1D00693876 /* Extract.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F48E426DD4B1D00693876 /* Extract.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,11 +26,14 @@
 		BA6F48C626DD481600693876 /* teste-solutis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "teste-solutis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6F48C926DD481600693876 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA6F48CB26DD481600693876 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BA6F48CD26DD481600693876 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BA6F48CD26DD481600693876 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BA6F48D026DD481600693876 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BA6F48D226DD481700693876 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA6F48D526DD481700693876 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA6F48D726DD481700693876 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA6F48E026DD492600693876 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BA6F48E226DD4A1F00693876 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		BA6F48E426DD4B1D00693876 /* Extract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extract.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,13 +71,40 @@
 			children = (
 				BA6F48C926DD481600693876 /* AppDelegate.swift */,
 				BA6F48CB26DD481600693876 /* SceneDelegate.swift */,
-				BA6F48CD26DD481600693876 /* ViewController.swift */,
-				BA6F48CF26DD481600693876 /* Main.storyboard */,
 				BA6F48D226DD481700693876 /* Assets.xcassets */,
-				BA6F48D426DD481700693876 /* LaunchScreen.storyboard */,
+				BA6F48DE26DD48E500693876 /* models */,
+				BA6F48DD26DD48DF00693876 /* views */,
+				BA6F48DF26DD48EA00693876 /* controllers */,
 				BA6F48D726DD481700693876 /* Info.plist */,
 			);
 			path = "teste-solutis";
+			sourceTree = "<group>";
+		};
+		BA6F48DD26DD48DF00693876 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				BA6F48CF26DD481600693876 /* Main.storyboard */,
+				BA6F48D426DD481700693876 /* LaunchScreen.storyboard */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		BA6F48DE26DD48E500693876 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				BA6F48E226DD4A1F00693876 /* Login.swift */,
+				BA6F48E026DD492600693876 /* User.swift */,
+				BA6F48E426DD4B1D00693876 /* Extract.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		BA6F48DF26DD48EA00693876 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BA6F48CD26DD481600693876 /* LoginViewController.swift */,
+			);
+			path = controllers;
 			sourceTree = "<group>";
 		};
 		C79745EA0AA103BEB9F319C5 /* Frameworks */ = {
@@ -88,7 +121,6 @@
 				54A664BBA355159A868B7693 /* Pods-teste-solutis.debug.xcconfig */,
 				5B7392CA63D47031F9231393 /* Pods-teste-solutis.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -103,6 +135,7 @@
 				BA6F48C226DD481600693876 /* Sources */,
 				BA6F48C326DD481600693876 /* Frameworks */,
 				BA6F48C426DD481600693876 /* Resources */,
+				39A41E59490E9A2DF3CD5FBB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -159,6 +192,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		39A41E59490E9A2DF3CD5FBB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-teste-solutis/Pods-teste-solutis-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-teste-solutis/Pods-teste-solutis-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-teste-solutis/Pods-teste-solutis-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7D0737712316B7F2FF598D16 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -188,9 +238,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA6F48CE26DD481600693876 /* ViewController.swift in Sources */,
+				BA6F48E126DD492600693876 /* User.swift in Sources */,
+				BA6F48E326DD4A1F00693876 /* Login.swift in Sources */,
+				BA6F48CE26DD481600693876 /* LoginViewController.swift in Sources */,
 				BA6F48CA26DD481600693876 /* AppDelegate.swift in Sources */,
 				BA6F48CC26DD481600693876 /* SceneDelegate.swift in Sources */,
+				BA6F48E526DD4B1D00693876 /* Extract.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

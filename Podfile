@@ -6,5 +6,6 @@ target 'teste-solutis' do
   use_frameworks!
 
   # Pods for teste-solutis
+ pod 'MaterialComponents'
 
 end
