@@ -1,0 +1,6 @@
+framework module Pods_teste_solutis {
+  umbrella header "Pods-teste-solutis-umbrella.h"
+
+  export *
+  module * { export * }
+}
