@@ -3,26 +3,36 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		8F6A512F84D754F9E148B402 /* Pods_teste_solutis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EFBBC2B76D0F24384C56F09 /* Pods_teste_solutis.framework */; };
+		BA59021526E12A060019FDAE /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA59021426E12A060019FDAE /* UserModel.swift */; };
+		BA59021726E13E200019FDAE /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA59021626E13E200019FDAE /* LoginService.swift */; };
+		BA59021B26E145460019FDAE /* ValidationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA59021A26E145460019FDAE /* ValidationUtils.swift */; };
+		BA59021E26E14A6E0019FDAE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA59021D26E14A6E0019FDAE /* Localizable.strings */; };
+		BA59022026E15A2B0019FDAE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA59021F26E15A2B0019FDAE /* HomeViewController.swift */; };
 		BA6F48CA26DD481600693876 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F48C926DD481600693876 /* AppDelegate.swift */; };
 		BA6F48CC26DD481600693876 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F48CB26DD481600693876 /* SceneDelegate.swift */; };
 		BA6F48CE26DD481600693876 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F48CD26DD481600693876 /* LoginViewController.swift */; };
 		BA6F48D126DD481600693876 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA6F48CF26DD481600693876 /* Main.storyboard */; };
 		BA6F48D326DD481700693876 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA6F48D226DD481700693876 /* Assets.xcassets */; };
 		BA6F48D626DD481700693876 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA6F48D426DD481700693876 /* LaunchScreen.storyboard */; };
-		BA6F48E126DD492600693876 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F48E026DD492600693876 /* User.swift */; };
-		BA6F48E326DD4A1F00693876 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F48E226DD4A1F00693876 /* Login.swift */; };
-		BA6F48E526DD4B1D00693876 /* Extract.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F48E426DD4B1D00693876 /* Extract.swift */; };
+		BA6F48E126DD492600693876 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F48E026DD492600693876 /* UserData.swift */; };
+		BA6F48E326DD4A1F00693876 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F48E226DD4A1F00693876 /* LoginData.swift */; };
+		BA6F48E526DD4B1D00693876 /* ExtractData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F48E426DD4B1D00693876 /* ExtractData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		54A664BBA355159A868B7693 /* Pods-teste-solutis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teste-solutis.debug.xcconfig"; path = "Target Support Files/Pods-teste-solutis/Pods-teste-solutis.debug.xcconfig"; sourceTree = "<group>"; };
 		5B7392CA63D47031F9231393 /* Pods-teste-solutis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teste-solutis.release.xcconfig"; path = "Target Support Files/Pods-teste-solutis/Pods-teste-solutis.release.xcconfig"; sourceTree = "<group>"; };
 		6EFBBC2B76D0F24384C56F09 /* Pods_teste_solutis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_teste_solutis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA59021426E12A060019FDAE /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		BA59021626E13E200019FDAE /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		BA59021A26E145460019FDAE /* ValidationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationUtils.swift; sourceTree = "<group>"; };
+		BA59021D26E14A6E0019FDAE /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		BA59021F26E15A2B0019FDAE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BA6F48C626DD481600693876 /* teste-solutis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "teste-solutis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6F48C926DD481600693876 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA6F48CB26DD481600693876 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,9 +41,9 @@
 		BA6F48D226DD481700693876 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA6F48D526DD481700693876 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA6F48D726DD481700693876 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA6F48E026DD492600693876 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		BA6F48E226DD4A1F00693876 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
-		BA6F48E426DD4B1D00693876 /* Extract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extract.swift; sourceTree = "<group>"; };
+		BA6F48E026DD492600693876 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		BA6F48E226DD4A1F00693876 /* LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
+		BA6F48E426DD4B1D00693876 /* ExtractData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +58,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA59021226E128BE0019FDAE /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BA6F48E226DD4A1F00693876 /* LoginData.swift */,
+				BA6F48E026DD492600693876 /* UserData.swift */,
+				BA6F48E426DD4B1D00693876 /* ExtractData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		BA59021826E142980019FDAE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BA59021626E13E200019FDAE /* LoginService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BA59021926E1452C0019FDAE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BA59021A26E145460019FDAE /* ValidationUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		BA59021C26E14A470019FDAE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BA6F48C926DD481600693876 /* AppDelegate.swift */,
+				BA6F48CB26DD481600693876 /* SceneDelegate.swift */,
+				BA6F48D226DD481700693876 /* Assets.xcassets */,
+				BA6F48D726DD481700693876 /* Info.plist */,
+				BA59021D26E14A6E0019FDAE /* Localizable.strings */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		BA6F48BD26DD481600693876 = {
 			isa = PBXGroup;
 			children = (
@@ -69,42 +117,41 @@
 		BA6F48C826DD481600693876 /* teste-solutis */ = {
 			isa = PBXGroup;
 			children = (
-				BA6F48C926DD481600693876 /* AppDelegate.swift */,
-				BA6F48CB26DD481600693876 /* SceneDelegate.swift */,
-				BA6F48D226DD481700693876 /* Assets.xcassets */,
-				BA6F48DE26DD48E500693876 /* models */,
-				BA6F48DD26DD48DF00693876 /* views */,
-				BA6F48DF26DD48EA00693876 /* controllers */,
-				BA6F48D726DD481700693876 /* Info.plist */,
+				BA6F48DE26DD48E500693876 /* Models */,
+				BA6F48DD26DD48DF00693876 /* Views */,
+				BA6F48DF26DD48EA00693876 /* Controllers */,
+				BA59021826E142980019FDAE /* Services */,
+				BA59021926E1452C0019FDAE /* Utils */,
+				BA59021C26E14A470019FDAE /* Supporting Files */,
 			);
 			path = "teste-solutis";
 			sourceTree = "<group>";
 		};
-		BA6F48DD26DD48DF00693876 /* views */ = {
+		BA6F48DD26DD48DF00693876 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				BA6F48CF26DD481600693876 /* Main.storyboard */,
 				BA6F48D426DD481700693876 /* LaunchScreen.storyboard */,
 			);
-			path = views;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		BA6F48DE26DD48E500693876 /* models */ = {
+		BA6F48DE26DD48E500693876 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BA6F48E226DD4A1F00693876 /* Login.swift */,
-				BA6F48E026DD492600693876 /* User.swift */,
-				BA6F48E426DD4B1D00693876 /* Extract.swift */,
+				BA59021426E12A060019FDAE /* UserModel.swift */,
+				BA59021226E128BE0019FDAE /* Data */,
 			);
-			path = models;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		BA6F48DF26DD48EA00693876 /* controllers */ = {
+		BA6F48DF26DD48EA00693876 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				BA6F48CD26DD481600693876 /* LoginViewController.swift */,
+				BA59021F26E15A2B0019FDAE /* HomeViewController.swift */,
 			);
-			path = controllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		C79745EA0AA103BEB9F319C5 /* Frameworks */ = {
@@ -184,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA6F48D626DD481700693876 /* LaunchScreen.storyboard in Resources */,
+				BA59021E26E14A6E0019FDAE /* Localizable.strings in Resources */,
 				BA6F48D326DD481700693876 /* Assets.xcassets in Resources */,
 				BA6F48D126DD481600693876 /* Main.storyboard in Resources */,
 			);
@@ -238,12 +286,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA6F48E126DD492600693876 /* User.swift in Sources */,
-				BA6F48E326DD4A1F00693876 /* Login.swift in Sources */,
+				BA6F48E126DD492600693876 /* UserData.swift in Sources */,
+				BA59021726E13E200019FDAE /* LoginService.swift in Sources */,
+				BA59021526E12A060019FDAE /* UserModel.swift in Sources */,
+				BA6F48E326DD4A1F00693876 /* LoginData.swift in Sources */,
 				BA6F48CE26DD481600693876 /* LoginViewController.swift in Sources */,
+				BA59022026E15A2B0019FDAE /* HomeViewController.swift in Sources */,
 				BA6F48CA26DD481600693876 /* AppDelegate.swift in Sources */,
 				BA6F48CC26DD481600693876 /* SceneDelegate.swift in Sources */,
-				BA6F48E526DD4B1D00693876 /* Extract.swift in Sources */,
+				BA59021B26E145460019FDAE /* ValidationUtils.swift in Sources */,
+				BA6F48E526DD4B1D00693876 /* ExtractData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,7 +444,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "teste-solutis/Info.plist";
+				INFOPLIST_FILE = "teste-solutis/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -411,7 +463,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "teste-solutis/Info.plist";
+				INFOPLIST_FILE = "teste-solutis/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

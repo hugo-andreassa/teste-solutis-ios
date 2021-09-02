@@ -6,6 +6,7 @@ target 'teste-solutis' do
   use_frameworks!
 
   # Pods for teste-solutis
- pod 'MaterialComponents'
+
+ pod 'SVProgressHUD', '2.2.5'
 
 end

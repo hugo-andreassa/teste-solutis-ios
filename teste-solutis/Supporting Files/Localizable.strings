@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  teste-solutis
+
+  Created by Virtual Machine on 02/09/21.
+  
+*/
+
+"ApiURL" = "https://api.mobile.test.solutis.xyz/";
