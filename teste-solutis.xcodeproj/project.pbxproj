@@ -13,6 +13,7 @@
 		BA59021B26E145460019FDAE /* ValidationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA59021A26E145460019FDAE /* ValidationUtils.swift */; };
 		BA59021E26E14A6E0019FDAE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA59021D26E14A6E0019FDAE /* Localizable.strings */; };
 		BA59022026E15A2B0019FDAE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA59021F26E15A2B0019FDAE /* HomeViewController.swift */; };
+		BA59022226E171EF0019FDAE /* ExtratoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA59022126E171EF0019FDAE /* ExtratoTableViewCell.swift */; };
 		BA6F48CA26DD481600693876 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F48C926DD481600693876 /* AppDelegate.swift */; };
 		BA6F48CC26DD481600693876 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F48CB26DD481600693876 /* SceneDelegate.swift */; };
 		BA6F48CE26DD481600693876 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F48CD26DD481600693876 /* LoginViewController.swift */; };
@@ -33,6 +34,7 @@
 		BA59021A26E145460019FDAE /* ValidationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationUtils.swift; sourceTree = "<group>"; };
 		BA59021D26E14A6E0019FDAE /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		BA59021F26E15A2B0019FDAE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BA59022126E171EF0019FDAE /* ExtratoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtratoTableViewCell.swift; sourceTree = "<group>"; };
 		BA6F48C626DD481600693876 /* teste-solutis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "teste-solutis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6F48C926DD481600693876 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA6F48CB26DD481600693876 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			children = (
 				BA6F48CF26DD481600693876 /* Main.storyboard */,
 				BA6F48D426DD481700693876 /* LaunchScreen.storyboard */,
+				BA59022126E171EF0019FDAE /* ExtratoTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				BA6F48E326DD4A1F00693876 /* LoginData.swift in Sources */,
 				BA6F48CE26DD481600693876 /* LoginViewController.swift in Sources */,
 				BA59022026E15A2B0019FDAE /* HomeViewController.swift in Sources */,
+				BA59022226E171EF0019FDAE /* ExtratoTableViewCell.swift in Sources */,
 				BA6F48CA26DD481600693876 /* AppDelegate.swift in Sources */,
 				BA6F48CC26DD481600693876 /* SceneDelegate.swift in Sources */,
 				BA59021B26E145460019FDAE /* ValidationUtils.swift in Sources */,
