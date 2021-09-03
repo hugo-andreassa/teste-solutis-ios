@@ -8,7 +8,7 @@
 import Foundation
 
 protocol LoginServiceDelegate {
-    func didPerformLogin(_ loginService: LoginService, user: UserModel)
+    func didPerformLogin(_ loginService: LoginService, username: String, user: UserModel)
     func didFailWithError(_ loginService: LoginService, error: Error)
 }
 
@@ -41,7 +41,7 @@ class LoginService {
                     
                     if let safeData = data {
                         if let user = self.parseJson(safeData) {
-                            self.delegate?.didPerformLogin(self, user: user)
+                            self.delegate?.didPerformLogin(self, username: loginData.username, user: user)
                         }
                     }
                 }

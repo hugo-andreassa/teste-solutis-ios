@@ -8,5 +8,6 @@ target 'teste-solutis' do
   # Pods for teste-solutis
 
  pod 'SVProgressHUD', '2.2.5'
-
+ pod 'KeychainSwift'
+ 
 end

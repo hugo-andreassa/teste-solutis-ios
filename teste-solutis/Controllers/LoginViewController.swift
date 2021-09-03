@@ -7,6 +7,7 @@
 
 import UIKit
 import SVProgressHUD
+import KeychainSwift
 
 class LoginViewController: UIViewController {
 
@@ -22,6 +23,9 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         loginService.delegate = self
+        
+        let keyChain = KeychainSwift()
+        self.fieldUser.text = keyChain.get("kUsername")
         
         setupUI()
     }
@@ -93,10 +97,14 @@ class LoginViewController: UIViewController {
 
 // MARK: - Login Service Delegate Methods
 extension LoginViewController: LoginServiceDelegate {
-    func didPerformLogin(_ loginService: LoginService, user: UserModel) {
+    func didPerformLogin(_ loginService: LoginService, username: String, user: UserModel) {
         DispatchQueue.main.async {
             SVProgressHUD.dismiss()
             self.user = user
+            
+            let keyChain = KeychainSwift()
+            keyChain.set(username, forKey: "kUsername")
+                
             self.performSegue(withIdentifier: "homeController", sender: self)
         }
     }

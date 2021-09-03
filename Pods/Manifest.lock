@@ -1,16 +1,20 @@
 PODS:
+  - KeychainSwift (19.0.0)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
+  - KeychainSwift
   - SVProgressHUD (= 2.2.5)
 
 SPEC REPOS:
   trunk:
+    - KeychainSwift
     - SVProgressHUD
 
 SPEC CHECKSUMS:
+  KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 8d333bb193397001b775811eb3f1904ba02e1168
+PODFILE CHECKSUM: 24c50b87126bf3ec9502b5c337d234cf14d67233
 
 COCOAPODS: 1.10.2
