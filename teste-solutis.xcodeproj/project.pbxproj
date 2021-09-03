@@ -14,6 +14,7 @@
 		BA59021E26E14A6E0019FDAE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA59021D26E14A6E0019FDAE /* Localizable.strings */; };
 		BA59022026E15A2B0019FDAE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA59021F26E15A2B0019FDAE /* HomeViewController.swift */; };
 		BA59022226E171EF0019FDAE /* ExtratoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA59022126E171EF0019FDAE /* ExtratoTableViewCell.swift */; };
+		BA62325126E26C4000D0D438 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62325026E26C4000D0D438 /* CardView.swift */; };
 		BA6F48CA26DD481600693876 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F48C926DD481600693876 /* AppDelegate.swift */; };
 		BA6F48CC26DD481600693876 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F48CB26DD481600693876 /* SceneDelegate.swift */; };
 		BA6F48CE26DD481600693876 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F48CD26DD481600693876 /* LoginViewController.swift */; };
@@ -35,6 +36,7 @@
 		BA59021D26E14A6E0019FDAE /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		BA59021F26E15A2B0019FDAE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BA59022126E171EF0019FDAE /* ExtratoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtratoTableViewCell.swift; sourceTree = "<group>"; };
+		BA62325026E26C4000D0D438 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		BA6F48C626DD481600693876 /* teste-solutis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "teste-solutis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6F48C926DD481600693876 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA6F48CB26DD481600693876 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				BA59021A26E145460019FDAE /* ValidationUtils.swift */,
+				BA62325026E26C4000D0D438 /* CardView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				BA6F48CA26DD481600693876 /* AppDelegate.swift in Sources */,
 				BA6F48CC26DD481600693876 /* SceneDelegate.swift in Sources */,
 				BA59021B26E145460019FDAE /* ValidationUtils.swift in Sources */,
+				BA62325126E26C4000D0D438 /* CardView.swift in Sources */,
 				BA6F48E526DD4B1D00693876 /* ExtractData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
