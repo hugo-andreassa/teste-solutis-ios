@@ -16,7 +16,26 @@ struct UserModel {
     var formattedCPF: String {
         guard let cpf = self.cpf else { return "Erro" }
         
-        return ""
+        if cpf.count == 11 {
+            var characters = Array(cpf)
+
+            characters.insert(".", at: 3)
+            characters.insert(".", at: 7)
+            characters.insert("-", at: 11)
+            
+            let masked = String(characters)
+            return masked
+        } else {
+            var characters = Array(cpf)
+
+            characters.insert(".", at: 2)
+            characters.insert(".", at: 6)
+            characters.insert("/", at: 9)
+            characters.insert("-", at: 13)
+            
+            let masked = String(characters)
+            return masked
+        }
     }
     
     var formattedBalance: String {

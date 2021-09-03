@@ -48,7 +48,7 @@ class HomeViewController: UIViewController {
     func setupUserData() {
         if let safeUser = user {
             self.nomeField.text = safeUser.name
-            self.cpfField.text = safeUser.cpf
+            self.cpfField.text = safeUser.formattedCPF
             self.saldoField.text = safeUser.formattedBalance
         }
     }
