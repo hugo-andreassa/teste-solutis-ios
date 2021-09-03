@@ -250,13 +250,13 @@
                                                             <color key="textColor" systemColor="systemGray2Color"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pagamento Conta de Luz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4eU-9Z-G7Y">
-                                                            <rect key="frame" x="10" y="38" width="203" height="22"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="249" text="Pagamento Conta de Luz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="4eU-9Z-G7Y">
+                                                            <rect key="frame" x="10" y="38" width="254" height="22"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- R$ 153,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LhS-Uq-Njw">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="- R$ 153,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LhS-Uq-Njw">
                                                             <rect key="frame" x="274" y="38" width="100" height="22"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                             <color key="textColor" systemColor="systemPinkColor"/>
@@ -279,6 +279,7 @@
                                                         <constraint firstAttribute="trailing" secondItem="OZe-Vb-bdV" secondAttribute="trailing" constant="10" id="RGX-fG-9gE"/>
                                                         <constraint firstItem="LhS-Uq-Njw" firstAttribute="top" secondItem="OZe-Vb-bdV" secondAttribute="bottom" constant="15" id="ZIw-8U-R6y"/>
                                                         <constraint firstItem="4eU-9Z-G7Y" firstAttribute="leading" secondItem="xn0-yr-u2j" secondAttribute="leading" constant="10" id="o9Y-dP-app"/>
+                                                        <constraint firstItem="LhS-Uq-Njw" firstAttribute="leading" secondItem="4eU-9Z-G7Y" secondAttribute="trailing" constant="10" id="q6F-Ea-1Gw"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -314,13 +315,13 @@
                                                             <color key="textColor" systemColor="systemGray2Color"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pagamento Conta de Luz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOZ-3l-fAs">
-                                                            <rect key="frame" x="10" y="38" width="203" height="22"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="249" text="Pagamento Conta de Luz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="sOZ-3l-fAs">
+                                                            <rect key="frame" x="10" y="38" width="254" height="22"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- R$ 153,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfb-ME-LCR">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="- R$ 153,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfb-ME-LCR">
                                                             <rect key="frame" x="274" y="38" width="100" height="22"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                             <color key="textColor" systemColor="systemGreenColor"/>
@@ -336,6 +337,7 @@
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstItem="sOZ-3l-fAs" firstAttribute="top" secondItem="Gn2-8z-wI5" secondAttribute="bottom" constant="15" id="49h-c7-TsZ"/>
+                                                        <constraint firstItem="gfb-ME-LCR" firstAttribute="leading" secondItem="sOZ-3l-fAs" secondAttribute="trailing" constant="10" id="Uxl-J8-EA1"/>
                                                         <constraint firstItem="wmx-gh-1yj" firstAttribute="top" secondItem="xLk-Xz-jmL" secondAttribute="top" constant="5" id="Z21-Xx-UQd"/>
                                                         <constraint firstAttribute="trailing" secondItem="wmx-gh-1yj" secondAttribute="trailing" constant="10" id="gX2-Xj-bJE"/>
                                                         <constraint firstAttribute="trailing" secondItem="gfb-ME-LCR" secondAttribute="trailing" constant="10" id="tpZ-fQ-Jq6"/>
@@ -373,6 +375,7 @@
                         <viewLayoutGuide key="safeArea" id="30H-sL-JXi"/>
                         <color key="backgroundColor" red="0.88225668670000001" green="0.88240832089999999" blue="0.88224714989999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="k7X-bh-QtX" firstAttribute="trailing" secondItem="30H-sL-JXi" secondAttribute="trailing" id="5zs-yx-jQE"/>
                             <constraint firstItem="oR1-Uk-qkj" firstAttribute="leading" secondItem="30H-sL-JXi" secondAttribute="leading" constant="15" id="Ile-BL-X8F"/>
                             <constraint firstItem="30H-sL-JXi" firstAttribute="trailing" secondItem="k7X-bh-QtX" secondAttribute="trailing" id="LxG-gf-bgf"/>
                             <constraint firstItem="oR1-Uk-qkj" firstAttribute="trailing" secondItem="30H-sL-JXi" secondAttribute="trailing" constant="-15" id="Nod-MY-nqc"/>

@@ -13,6 +13,12 @@ struct UserModel {
     let balance: Double?
     let token: String?
     
+    var formattedCPF: String {
+        guard let cpf = self.cpf else { return "Erro" }
+        
+        return ""
+    }
+    
     var formattedBalance: String {
         let formatter = NumberFormatter()
         formatter.locale = Locale(identifier: "pt-BR")
