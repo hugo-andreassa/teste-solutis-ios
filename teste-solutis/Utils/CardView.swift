@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-@IBDesignable class CardView: UIView{
+@IBDesignable class CardView: UIView {
     
     var cornerRadius: CGFloat = 10
     var ofsetWidth: CGFloat = 5
@@ -24,5 +24,4 @@ import UIKit
         layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius).cgPath
         layer.shadowOpacity = ofsetShadowOpacity
     }
-   
 }

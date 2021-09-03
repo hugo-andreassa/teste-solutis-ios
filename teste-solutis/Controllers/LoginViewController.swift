@@ -8,13 +8,15 @@
 import UIKit
 import SVProgressHUD
 
-class LoginViewController: UIViewController, LoginServiceDelegate {
+class LoginViewController: UIViewController {
 
     @IBOutlet weak var fieldUser: UITextField!
     @IBOutlet weak var fieldPassword: UITextField!
     @IBOutlet weak var btnLogin: UIButton!
     
     var loginService = LoginService()
+    
+    var user: UserModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,14 +83,27 @@ class LoginViewController: UIViewController, LoginServiceDelegate {
         loginService.doLogin(username: username, password: password)
     }
     
-    // MARK: Login Service Delegate Methods
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "homeController" {
+            let controller = segue.destination as! HomeViewController
+            controller.user = user
+        }
+    }
+}
+
+// MARK: - Login Service Delegate Methods
+extension LoginViewController: LoginServiceDelegate {
     func didPerformLogin(_ loginService: LoginService, user: UserModel) {
-        SVProgressHUD.dismiss()
-        print(user)
+        DispatchQueue.main.async {
+            SVProgressHUD.dismiss()
+            self.user = user
+            self.performSegue(withIdentifier: "homeController", sender: self)
+        }
     }
     
     func didFailWithError(_ loginService: LoginService, error: Error) {
         SVProgressHUD.dismiss()
+        showErrorAlert(message: "Usuário ou senha inválidos")
         print(error)
     }
 }

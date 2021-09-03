@@ -8,8 +8,19 @@
 import Foundation
 
 struct UserModel {
-    let nome: String?
+    let name: String?
     let cpf: String?
-    let saldo: Double?
+    let balance: Double?
     let token: String?
+    
+    var formattedBalance: String {
+        let formatter = NumberFormatter()
+        formatter.locale = Locale(identifier: "pt-BR")
+        formatter.numberStyle = .currency
+        
+        guard let safeValue = self.balance else { return "Erro" }
+        guard let formattedValue = formatter.string(from: safeValue as NSNumber) else { return "Erro" }
+            
+        return formattedValue
+    }
 }

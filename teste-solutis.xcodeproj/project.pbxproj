@@ -15,6 +15,8 @@
 		BA59022026E15A2B0019FDAE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA59021F26E15A2B0019FDAE /* HomeViewController.swift */; };
 		BA59022226E171EF0019FDAE /* ExtratoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA59022126E171EF0019FDAE /* ExtratoTableViewCell.swift */; };
 		BA62325126E26C4000D0D438 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62325026E26C4000D0D438 /* CardView.swift */; };
+		BA62325326E28FAE00D0D438 /* ExtractModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62325226E28FAE00D0D438 /* ExtractModel.swift */; };
+		BA62325526E2965000D0D438 /* ExtractService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62325426E2964F00D0D438 /* ExtractService.swift */; };
 		BA6F48CA26DD481600693876 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F48C926DD481600693876 /* AppDelegate.swift */; };
 		BA6F48CC26DD481600693876 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F48CB26DD481600693876 /* SceneDelegate.swift */; };
 		BA6F48CE26DD481600693876 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F48CD26DD481600693876 /* LoginViewController.swift */; };
@@ -37,6 +39,8 @@
 		BA59021F26E15A2B0019FDAE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BA59022126E171EF0019FDAE /* ExtratoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtratoTableViewCell.swift; sourceTree = "<group>"; };
 		BA62325026E26C4000D0D438 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		BA62325226E28FAE00D0D438 /* ExtractModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractModel.swift; sourceTree = "<group>"; };
+		BA62325426E2964F00D0D438 /* ExtractService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractService.swift; sourceTree = "<group>"; };
 		BA6F48C626DD481600693876 /* teste-solutis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "teste-solutis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6F48C926DD481600693876 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA6F48CB26DD481600693876 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				BA59021626E13E200019FDAE /* LoginService.swift */,
+				BA62325426E2964F00D0D438 /* ExtractService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				BA59021426E12A060019FDAE /* UserModel.swift */,
+				BA62325226E28FAE00D0D438 /* ExtractModel.swift */,
 				BA59021226E128BE0019FDAE /* Data */,
 			);
 			path = Models;
@@ -297,9 +303,11 @@
 				BA59021526E12A060019FDAE /* UserModel.swift in Sources */,
 				BA6F48E326DD4A1F00693876 /* LoginData.swift in Sources */,
 				BA6F48CE26DD481600693876 /* LoginViewController.swift in Sources */,
+				BA62325526E2965000D0D438 /* ExtractService.swift in Sources */,
 				BA59022026E15A2B0019FDAE /* HomeViewController.swift in Sources */,
 				BA59022226E171EF0019FDAE /* ExtratoTableViewCell.swift in Sources */,
 				BA6F48CA26DD481600693876 /* AppDelegate.swift in Sources */,
+				BA62325326E28FAE00D0D438 /* ExtractModel.swift in Sources */,
 				BA6F48CC26DD481600693876 /* SceneDelegate.swift in Sources */,
 				BA59021B26E145460019FDAE /* ValidationUtils.swift in Sources */,
 				BA62325126E26C4000D0D438 /* CardView.swift in Sources */,

@@ -57,9 +57,9 @@ class LoginService {
         do {
             let userData = try JSONDecoder().decode(UserData.self, from: data)
             let userModel = UserModel(
-                nome: userData.nome,
+                name: userData.nome,
                 cpf: userData.cpf,
-                saldo: userData.saldo,
+                balance: userData.saldo,
                 token: userData.token)
             return userModel
         } catch {

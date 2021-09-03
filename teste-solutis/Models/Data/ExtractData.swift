@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct ExtractData {
-    let description: String?
-    let value: Double?
-    let date: String?
+struct ExtractData: Decodable {
+    let descricao: String?
+    let valor: Double?
+    let data: String?
 }
