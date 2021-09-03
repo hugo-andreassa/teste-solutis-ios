@@ -59,6 +59,20 @@ class HomeViewController: UIViewController {
             extractService.getExtract(token: token)
         }
     }
+    
+    @IBAction func exitPressed(_ sender: Any) {
+        let alert = UIAlertController(title: "Atenção", message: "Deseja mesmo sair?", preferredStyle: .alert)
+        let sairAction = UIAlertAction(title: "Sair", style: .default, handler: {_ in
+            self.performSegue(withIdentifier: "loginController", sender: self)
+        })
+        let cancelarAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: {_ in
+            self.dismiss(animated: true, completion: nil)
+        })
+        alert.addAction(sairAction)
+        alert.addAction(cancelarAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 // MARK: - HomeServiceDelegate

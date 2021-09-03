@@ -197,27 +197,30 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconLogout" translatesAutoresizingMaskIntoConstraints="NO" id="DRW-cZ-Aky">
+                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWd-QQ-Soc">
                                         <rect key="frame" x="364" y="50" width="35" height="35"/>
-                                        <color key="tintColor" systemColor="labelColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="35" id="4HL-mZ-xZZ"/>
-                                            <constraint firstAttribute="height" constant="35" id="KJ9-Mh-LH0"/>
+                                            <constraint firstAttribute="width" constant="35" id="5bt-LS-Y9P"/>
+                                            <constraint firstAttribute="height" constant="35" id="lCr-2S-QMS"/>
                                         </constraints>
-                                    </imageView>
+                                        <state key="normal" backgroundImage="IconLogout">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="exitPressed:" destination="LzK-ds-E5X" eventType="touchUpInside" id="hf6-gx-6kD"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
-                                    <constraint firstItem="DRW-cZ-Aky" firstAttribute="top" secondItem="X6d-Cn-osd" secondAttribute="top" id="0rX-eh-eGC"/>
                                     <constraint firstItem="X6d-Cn-osd" firstAttribute="top" secondItem="k7X-bh-QtX" secondAttribute="top" constant="50" id="12X-kp-ayt"/>
                                     <constraint firstAttribute="trailing" secondItem="d3D-lN-tFa" secondAttribute="trailing" constant="15" id="2MR-O9-7W5"/>
                                     <constraint firstItem="X6d-Cn-osd" firstAttribute="leading" secondItem="k7X-bh-QtX" secondAttribute="leading" constant="15" id="3v7-cG-YgB"/>
                                     <constraint firstItem="UlN-Nr-Yw5" firstAttribute="leading" secondItem="k7X-bh-QtX" secondAttribute="leading" constant="15" id="De0-b7-ofw"/>
-                                    <constraint firstAttribute="trailing" secondItem="DRW-cZ-Aky" secondAttribute="trailing" constant="15" id="OGQ-ct-96t"/>
                                     <constraint firstAttribute="trailing" secondItem="lf9-2C-AjZ" secondAttribute="trailing" constant="15" id="Oqr-fU-jIC"/>
-                                    <constraint firstItem="DRW-cZ-Aky" firstAttribute="leading" secondItem="X6d-Cn-osd" secondAttribute="trailing" constant="15" id="Qdb-k2-1Ay"/>
                                     <constraint firstItem="lf9-2C-AjZ" firstAttribute="leading" secondItem="k7X-bh-QtX" secondAttribute="leading" constant="15" id="R7I-V7-OtK"/>
-                                    <constraint firstItem="DRW-cZ-Aky" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="X6d-Cn-osd" secondAttribute="bottom" id="f9a-Ne-tqC"/>
+                                    <constraint firstItem="xWd-QQ-Soc" firstAttribute="leading" secondItem="X6d-Cn-osd" secondAttribute="trailing" constant="15" id="dDh-3L-gtR"/>
+                                    <constraint firstItem="xWd-QQ-Soc" firstAttribute="top" secondItem="X6d-Cn-osd" secondAttribute="top" id="daF-JC-Gqy"/>
                                     <constraint firstItem="UlN-Nr-Yw5" firstAttribute="top" secondItem="X6d-Cn-osd" secondAttribute="bottom" constant="20" id="fnZ-vR-N8v"/>
                                     <constraint firstAttribute="trailing" secondItem="feW-47-gr6" secondAttribute="trailing" constant="15" id="g73-bV-DLs"/>
                                     <constraint firstItem="feW-47-gr6" firstAttribute="top" secondItem="UlN-Nr-Yw5" secondAttribute="bottom" constant="4" id="ia2-c6-kro"/>
@@ -225,6 +228,7 @@
                                     <constraint firstAttribute="height" constant="245" id="l9X-rZ-zfR"/>
                                     <constraint firstItem="lf9-2C-AjZ" firstAttribute="top" secondItem="feW-47-gr6" secondAttribute="bottom" constant="20" id="mKi-tn-wOu"/>
                                     <constraint firstItem="feW-47-gr6" firstAttribute="leading" secondItem="k7X-bh-QtX" secondAttribute="leading" constant="15" id="py2-3N-QH0"/>
+                                    <constraint firstAttribute="trailing" secondItem="xWd-QQ-Soc" secondAttribute="trailing" constant="15" id="q12-Jg-nxR"/>
                                     <constraint firstItem="d3D-lN-tFa" firstAttribute="top" secondItem="lf9-2C-AjZ" secondAttribute="bottom" constant="5" id="tOB-vc-X1L"/>
                                     <constraint firstItem="d3D-lN-tFa" firstAttribute="leading" secondItem="k7X-bh-QtX" secondAttribute="leading" constant="15" id="zWk-In-lmD"/>
                                 </constraints>
@@ -393,6 +397,7 @@
                         <outlet property="nomeField" destination="X6d-Cn-osd" id="B01-sd-jwe"/>
                         <outlet property="saldoField" destination="d3D-lN-tFa" id="1Qz-i7-idx"/>
                         <outlet property="tableView" destination="oR1-Uk-qkj" id="bWF-Oi-Alh"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="loginController" id="QYn-Vl-b5k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZRC-y3-F3h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -400,12 +405,12 @@
             <point key="canvasLocation" x="873.91304347826099" y="114.50892857142857"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="QYn-Vl-b5k"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="IconLogout" width="13" height="13"/>
         <image name="SolutisLogo" width="200.5" height="45.5"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
