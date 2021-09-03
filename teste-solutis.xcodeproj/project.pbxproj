@@ -106,6 +106,14 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		BA62325626E2C37A00D0D438 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BA59022126E171EF0019FDAE /* ExtratoTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		BA6F48BD26DD481600693876 = {
 			isa = PBXGroup;
 			children = (
@@ -140,9 +148,9 @@
 		BA6F48DD26DD48DF00693876 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BA62325626E2C37A00D0D438 /* Cells */,
 				BA6F48CF26DD481600693876 /* Main.storyboard */,
 				BA6F48D426DD481700693876 /* LaunchScreen.storyboard */,
-				BA59022126E171EF0019FDAE /* ExtratoTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
