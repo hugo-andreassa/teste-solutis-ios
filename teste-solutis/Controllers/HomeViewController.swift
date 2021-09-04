@@ -85,6 +85,13 @@ extension HomeViewController: ExtractServiceDelegate {
         }
     }
     
+    func didFailWithoutError(_ extractService: ExtractService, message: String) {
+        DispatchQueue.main.async {
+            SVProgressHUD.dismiss()
+            print(message)
+        }
+    }
+    
     func didFailWithError(_ extractService: ExtractService, error: Error) {
         DispatchQueue.main.async {
             SVProgressHUD.dismiss()

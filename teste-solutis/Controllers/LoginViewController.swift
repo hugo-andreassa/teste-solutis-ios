@@ -54,34 +54,35 @@ class LoginViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func loginPressed(_ sender: Any) {
-        /*let validation = ValidationUtils()
+    @IBAction func loginPressed(_ sender: UIButton) {
+        sender.isEnabled = false
         
-        guard let username = fieldUser.text else {
-            setErrorField(fieldUser, error: true)
-            return
-        }
-        guard let password = fieldUser.text else {
-            setErrorField(fieldPassword, error: true)
-            return
-        }
+        let validation = ValidationUtils()
         
-        if !validation.isCpf() || !validation.isEmail() {
+        guard let username = fieldUser.text else { return }
+        guard let password = fieldPassword.text else { return }
+        
+        let isCpf = validation.isCpfOrCnpj(username)
+        let isEmail = validation.isEmail(username)
+        if !isCpf && !isEmail {
             setErrorField(fieldUser, error: true)
             showErrorAlert(message: "E-mail inválido")
+            sender.isEnabled = true
             return
         }
         setErrorField(fieldUser, error: false)
         
-        if !validation.isPassword() {
+        let isPassword = validation.isPassword(password)
+        if !isPassword {
             setErrorField(fieldPassword, error: true)
             showErrorAlert(message: "Senha inválida")
+            sender.isEnabled = true
             return
         }
-        setErrorField(fieldPassword, error: false)*/
+        setErrorField(fieldPassword, error: false)
     
-        let username = "teste@teste.com.br"
-        let password = "abc123@"
+        // let username = "teste@teste.com.br"
+        // let password = "abc123@"
         
         SVProgressHUD.show()
         loginService.doLogin(username: username, password: password)
@@ -109,10 +110,21 @@ extension LoginViewController: LoginServiceDelegate {
         }
     }
     
+    func didFailWithoutError(_ loginService: LoginService, message: String) {
+        DispatchQueue.main.async {
+            SVProgressHUD.dismiss()
+            self.btnLogin.isEnabled = true
+            self.showErrorAlert(message: message)
+        }
+    }
+    
     func didFailWithError(_ loginService: LoginService, error: Error) {
-        SVProgressHUD.dismiss()
-        showErrorAlert(message: "Usuário ou senha inválidos")
-        print(error)
+        DispatchQueue.main.async {
+            SVProgressHUD.dismiss()
+            self.btnLogin.isEnabled = true
+            self.showErrorAlert(message: "Ocorreu um erro desconhecido")
+            print(error)
+        }
     }
 }
 

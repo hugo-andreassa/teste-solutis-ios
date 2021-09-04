@@ -6,11 +6,15 @@
 //
 
 import Foundation
+import CPF_CNPJ_Validator
 
 class ValidationUtils {
     
-    func isCpf() -> Bool {
-        return true
+    func isCpfOrCnpj(_ cpfCnpj: String) -> Bool {
+        let cpf = BooleanValidator().validate(cpfCnpj, kind: .CPF)
+        let cnpj = BooleanValidator().validate(cpfCnpj, kind: .CNPJ)
+        
+        return cpf || cnpj
     }
 
     func isEmail(_ email: String) -> Bool {
@@ -20,7 +24,7 @@ class ValidationUtils {
         return emailPred.evaluate(with: email)
     }
 
-    func isPassword() -> Bool {
-        return true
+    func isPassword(_ password: String) -> Bool {
+        return !password.isEmpty
     }
 }

@@ -9,6 +9,7 @@ import Foundation
 
 protocol LoginServiceDelegate {
     func didPerformLogin(_ loginService: LoginService, username: String, user: UserModel)
+    func didFailWithoutError(_ loginService: LoginService, message: String)
     func didFailWithError(_ loginService: LoginService, error: Error)
 }
 
@@ -33,9 +34,14 @@ class LoginService {
                 request.httpMethod = "POST"
                 request.httpBody = try JSONEncoder().encode(loginData)
                 
-                let task = session.dataTask(with: request) { data, urlResponse, error in
+                let task = session.dataTask(with: request) { data, response, error in
                     if error != nil {
                         self.delegate?.didFailWithError(self, error: error!)
+                        return
+                    }
+                    
+                    if (response as! HTTPURLResponse).statusCode > 299 {
+                        self.delegate?.didFailWithoutError(self, message: "Usuário ou senha inválido")
                         return
                     }
                     

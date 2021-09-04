@@ -9,6 +9,7 @@ import Foundation
 
 protocol ExtractServiceDelegate {
     func didUpdateExtract(_ extractService: ExtractService, extractList: [ExtractModel])
+    func didFailWithoutError(_ extractService: ExtractService, message: String)
     func didFailWithError(_ extractService: ExtractService, error: Error)
 }
 
@@ -30,9 +31,14 @@ class ExtractService {
             request.setValue(token, forHTTPHeaderField: "token")
             request.httpMethod = "GET"
             
-            let task = session.dataTask(with: request) { data, urlResponse, error in
+            let task = session.dataTask(with: request) { data, response, error in
                 if error != nil {
                     self.delegate?.didFailWithError(self, error: error!)
+                    return
+                }
+                
+                if (response as! HTTPURLResponse).statusCode > 299 {
+                    self.delegate?.didFailWithoutError(self, message: "Ocorreu um erro desconhecido")
                     return
                 }
                 

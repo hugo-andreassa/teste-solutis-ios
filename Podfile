@@ -9,5 +9,6 @@ target 'teste-solutis' do
 
  pod 'SVProgressHUD', '2.2.5'
  pod 'KeychainSwift'
+ pod 'CPF-CNPJ-Validator'
  
 end
