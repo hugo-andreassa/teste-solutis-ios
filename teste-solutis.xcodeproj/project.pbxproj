@@ -13,7 +13,7 @@
 		BA59021B26E145460019FDAE /* ValidationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA59021A26E145460019FDAE /* ValidationUtils.swift */; };
 		BA59021E26E14A6E0019FDAE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA59021D26E14A6E0019FDAE /* Localizable.strings */; };
 		BA59022026E15A2B0019FDAE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA59021F26E15A2B0019FDAE /* HomeViewController.swift */; };
-		BA59022226E171EF0019FDAE /* ExtratoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA59022126E171EF0019FDAE /* ExtratoTableViewCell.swift */; };
+		BA59022226E171EF0019FDAE /* StatementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA59022126E171EF0019FDAE /* StatementTableViewCell.swift */; };
 		BA62325126E26C4000D0D438 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62325026E26C4000D0D438 /* CardView.swift */; };
 		BA62325326E28FAE00D0D438 /* StatementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62325226E28FAE00D0D438 /* StatementModel.swift */; };
 		BA62325526E2965000D0D438 /* StatementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62325426E2964F00D0D438 /* StatementService.swift */; };
@@ -37,7 +37,7 @@
 		BA59021A26E145460019FDAE /* ValidationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationUtils.swift; sourceTree = "<group>"; };
 		BA59021D26E14A6E0019FDAE /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		BA59021F26E15A2B0019FDAE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		BA59022126E171EF0019FDAE /* ExtratoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtratoTableViewCell.swift; sourceTree = "<group>"; };
+		BA59022126E171EF0019FDAE /* StatementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementTableViewCell.swift; sourceTree = "<group>"; };
 		BA62325026E26C4000D0D438 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		BA62325226E28FAE00D0D438 /* StatementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementModel.swift; sourceTree = "<group>"; };
 		BA62325426E2964F00D0D438 /* StatementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementService.swift; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 		BA62325626E2C37A00D0D438 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				BA59022126E171EF0019FDAE /* ExtratoTableViewCell.swift */,
+				BA59022126E171EF0019FDAE /* StatementTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -138,6 +138,7 @@
 				BA6F48DE26DD48E500693876 /* Models */,
 				BA6F48DD26DD48DF00693876 /* Views */,
 				BA6F48DF26DD48EA00693876 /* Controllers */,
+				BA62325626E2C37A00D0D438 /* Cells */,
 				BA59021826E142980019FDAE /* Services */,
 				BA59021926E1452C0019FDAE /* Utils */,
 				BA59021C26E14A470019FDAE /* Supporting Files */,
@@ -148,7 +149,6 @@
 		BA6F48DD26DD48DF00693876 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BA62325626E2C37A00D0D438 /* Cells */,
 				BA6F48CF26DD481600693876 /* Main.storyboard */,
 				BA6F48D426DD481700693876 /* LaunchScreen.storyboard */,
 			);
@@ -313,7 +313,7 @@
 				BA6F48CE26DD481600693876 /* LoginViewController.swift in Sources */,
 				BA62325526E2965000D0D438 /* StatementService.swift in Sources */,
 				BA59022026E15A2B0019FDAE /* HomeViewController.swift in Sources */,
-				BA59022226E171EF0019FDAE /* ExtratoTableViewCell.swift in Sources */,
+				BA59022226E171EF0019FDAE /* StatementTableViewCell.swift in Sources */,
 				BA6F48CA26DD481600693876 /* AppDelegate.swift in Sources */,
 				BA62325326E28FAE00D0D438 /* StatementModel.swift in Sources */,
 				BA6F48CC26DD481600693876 /* SceneDelegate.swift in Sources */,

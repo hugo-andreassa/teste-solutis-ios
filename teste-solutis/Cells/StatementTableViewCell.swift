@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ExtratoTableViewCell: UITableViewCell {
+class StatementTableViewCell: UITableViewCell {
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!

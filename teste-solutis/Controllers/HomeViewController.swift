@@ -118,7 +118,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let item = statementList[(indexPath as NSIndexPath).row]
         
         if item.type == "Pagamento" {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "pagamentoCell", for: indexPath) as! ExtratoTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "pagamentoCell", for: indexPath) as! StatementTableViewCell
             cell.dateLabel.text = item.formattedDate
             cell.descriptionLabel.text = item.description
             cell.typeLabel.text = item.type
@@ -126,7 +126,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "recebimentoCell", for: indexPath) as! ExtratoTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "recebimentoCell", for: indexPath) as! StatementTableViewCell
             cell.dateLabel.text = item.formattedDate
             cell.descriptionLabel.text = item.description
             cell.typeLabel.text = item.type

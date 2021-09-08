@@ -238,7 +238,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pagamentoCell" rowHeight="80" id="fne-E5-x6w" customClass="ExtratoTableViewCell" customModule="teste_solutis" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pagamentoCell" rowHeight="80" id="fne-E5-x6w" customClass="StatementTableViewCell" customModule="teste_solutis" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.5" width="384" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fne-E5-x6w" id="XcY-32-sMa">
@@ -303,7 +303,7 @@
                                             <outlet property="valueLabel" destination="LhS-Uq-Njw" id="kPp-h9-b4s"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recebimentoCell" rowHeight="80" id="sOx-kT-uAS" customClass="ExtratoTableViewCell" customModule="teste_solutis" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recebimentoCell" rowHeight="80" id="sOx-kT-uAS" customClass="StatementTableViewCell" customModule="teste_solutis" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="104.5" width="384" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sOx-kT-uAS" id="DmR-CD-uDm">
@@ -406,7 +406,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nfS-2l-4Xg"/>
         <segue reference="QYn-Vl-b5k"/>
     </inferredMetricsTieBreakers>
     <resources>
