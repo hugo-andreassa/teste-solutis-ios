@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ExtractModel {
+struct StatementModel {
     let description: String?
     let value: Double?
     let date: String?

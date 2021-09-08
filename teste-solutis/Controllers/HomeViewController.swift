@@ -16,18 +16,18 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var cpfField: UILabel!
     @IBOutlet weak var saldoField: UILabel!
     
-    var extractService = ExtractService()
+    var statementService = StatementService()
     var user: UserModel?
-    var extractList: [ExtractModel] = []
+    var statementList: [StatementModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        extractService.delegate = self
+        statementService.delegate = self
         
         setGradient()
         setupUserData()
-        requestExtractData()
+        requestStatementData()
     }
     
     func setGradient() {
@@ -53,10 +53,10 @@ class HomeViewController: UIViewController {
         }
     }
     
-    func requestExtractData() {
+    func requestStatementData() {
         if let token = user?.token {
             SVProgressHUD.show()
-            extractService.getExtract(token: token)
+            statementService.getExtract(token: token)
         }
     }
     
@@ -76,23 +76,23 @@ class HomeViewController: UIViewController {
 }
 
 // MARK: - HomeServiceDelegate
-extension HomeViewController: ExtractServiceDelegate {
-    func didUpdateExtract(_ extractService: ExtractService, extractList: [ExtractModel]) {
+extension HomeViewController: StatementServiceDelegate {
+    func didUpdateExtract(_ statementService: StatementService, statementList: [StatementModel]) {
         DispatchQueue.main.async {
-            self.extractList = extractList
+            self.statementList = statementList
             self.tableView.reloadData()
             SVProgressHUD.dismiss()
         }
     }
     
-    func didFailWithoutError(_ extractService: ExtractService, message: String) {
+    func didFailWithoutError(_ statementService: StatementService, message: String) {
         DispatchQueue.main.async {
             SVProgressHUD.dismiss()
             print(message)
         }
     }
     
-    func didFailWithError(_ extractService: ExtractService, error: Error) {
+    func didFailWithError(_ statementService: StatementService, error: Error) {
         DispatchQueue.main.async {
             SVProgressHUD.dismiss()
             print(error)
@@ -107,7 +107,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return extractList.count
+        return statementList.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -115,7 +115,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = extractList[(indexPath as NSIndexPath).row]
+        let item = statementList[(indexPath as NSIndexPath).row]
         
         if item.type == "Pagamento" {
             let cell = tableView.dequeueReusableCell(withIdentifier: "pagamentoCell", for: indexPath) as! ExtratoTableViewCell

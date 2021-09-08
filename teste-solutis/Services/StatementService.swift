@@ -7,14 +7,14 @@
 
 import Foundation
 
-protocol ExtractServiceDelegate {
-    func didUpdateExtract(_ extractService: ExtractService, extractList: [ExtractModel])
-    func didFailWithoutError(_ extractService: ExtractService, message: String)
-    func didFailWithError(_ extractService: ExtractService, error: Error)
+protocol StatementServiceDelegate {
+    func didUpdateExtract(_ statementService: StatementService, statementList: [StatementModel])
+    func didFailWithoutError(_ statementService: StatementService, message: String)
+    func didFailWithError(_ statementService: StatementService, error: Error)
 }
 
-class ExtractService {
-    var delegate: ExtractServiceDelegate?
+class StatementService {
+    var delegate: StatementServiceDelegate?
     
     let apiUrl = NSLocalizedString("ApiURL", comment: "")
     
@@ -44,7 +44,7 @@ class ExtractService {
                 
                 if let safeData = data {
                     if let extractList = self.parseJson(safeData) {
-                        self.delegate?.didUpdateExtract(self, extractList: extractList)
+                        self.delegate?.didUpdateExtract(self, statementList: extractList)
                     }
                 }
             }
@@ -53,17 +53,17 @@ class ExtractService {
         }
     }
     
-    func parseJson(_ data: Data) -> [ExtractModel]? {
+    func parseJson(_ data: Data) -> [StatementModel]? {
         do {
-            let extractData = try JSONDecoder().decode([ExtractData].self, from: data)
-            var extractList: [ExtractModel] = []
+            let statementData = try JSONDecoder().decode([StatementData].self, from: data)
+            var statementList: [StatementModel] = []
             
-            for item in extractData {
-                let extract = ExtractModel(description: item.descricao, value: item.valor, date: item.data)
-                extractList.append(extract)
+            for item in statementData {
+                let statement = StatementModel(description: item.descricao, value: item.valor, date: item.data)
+                statementList.append(statement)
             }
             
-            return extractList
+            return statementList
         } catch {
             delegate?.didFailWithError(self, error: error)
             return nil

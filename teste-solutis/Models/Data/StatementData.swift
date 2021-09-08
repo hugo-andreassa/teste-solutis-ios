@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ExtractData: Decodable {
+struct StatementData: Decodable {
     let descricao: String?
     let valor: Double?
     let data: String?
