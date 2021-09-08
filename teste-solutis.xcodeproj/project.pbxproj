@@ -100,8 +100,8 @@
 				BA6F48C926DD481600693876 /* AppDelegate.swift */,
 				BA6F48CB26DD481600693876 /* SceneDelegate.swift */,
 				BA6F48D226DD481700693876 /* Assets.xcassets */,
-				BA6F48D726DD481700693876 /* Info.plist */,
 				BA59021D26E14A6E0019FDAE /* Localizable.strings */,
+				BA6F48D726DD481700693876 /* Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";

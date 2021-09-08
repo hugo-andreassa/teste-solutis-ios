@@ -114,6 +114,7 @@ extension LoginViewController: LoginServiceDelegate {
         DispatchQueue.main.async {
             SVProgressHUD.dismiss()
             self.btnLogin.isEnabled = true
+            self.fieldPassword.text = ""
             self.showErrorAlert(message: message)
         }
     }
