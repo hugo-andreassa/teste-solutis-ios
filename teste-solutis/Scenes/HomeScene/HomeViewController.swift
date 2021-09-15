@@ -8,6 +8,12 @@
 import UIKit
 import SVProgressHUD
 
+protocol HomeDisplayLogic {
+    func displayUser(viewModel: LoginModels.DoLogin.ViewModel)
+    func displayStatements(viewModel: LoginModels.DoLogin.ViewModel)
+    func displayError(errorMessage: String)
+}
+
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -16,15 +22,14 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var cpfField: UILabel!
     @IBOutlet weak var saldoField: UILabel!
     
-    var statementService = StatementService()
+    var interactor: HomeBusinessLogic?
     var user: UserModel?
     var statementList: [StatementModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        statementService.delegate = self
         
+        setupVIP()
         setGradient()
         setupUserData()
         requestStatementData()
@@ -45,18 +50,30 @@ class HomeViewController: UIViewController {
         self.gradientView.layer.insertSublayer(gradient, at: 0)
     }
     
+    private func setupVIP() {
+        let interactor = HomeInteractor()
+        let presenter = HomePresenter()
+        
+        self.interactor = interactor
+        interactor.presenter = presenter
+        presenter.controller = self
+    }
+    
     func setupUserData() {
-        if let safeUser = user {
-            self.nomeField.text = safeUser.name
-            self.cpfField.text = safeUser.formattedCPF
-            self.saldoField.text = safeUser.formattedBalance
-        }
+        interactor?.displayUser(request: Home.DisplayUser.Request(user: user!))
+        
+//        if let safeUser = user {
+//            self.nomeField.text = safeUser.name
+//            self.cpfField.text = safeUser.formattedCPF
+//            self.saldoField.text = safeUser.formattedBalance
+//        }
     }
     
     func requestStatementData() {
         if let token = user?.token {
             SVProgressHUD.show()
-            statementService.getExtract(token: token)
+            
+            // statementService.getExtract(token: token)
         }
     }
     
@@ -76,28 +93,42 @@ class HomeViewController: UIViewController {
 }
 
 // MARK: - HomeServiceDelegate
-extension HomeViewController: StatementServiceDelegate {
-    func didUpdateExtract(_ statementService: StatementService, statementList: [StatementModel]) {
-        DispatchQueue.main.async {
-            self.statementList = statementList
-            self.tableView.reloadData()
-            SVProgressHUD.dismiss()
-        }
+extension HomeViewController: HomeDisplayLogic {
+    func displayUser(viewModel: LoginModels.DoLogin.ViewModel) {
+        self.nomeField.text = viewModel.user?.name
+        self.cpfField.text = viewModel.user?.formattedCPF
+        self.saldoField.text = viewModel.user?.formattedBalance
     }
     
-    func didFailWithoutError(_ statementService: StatementService, message: String) {
-        DispatchQueue.main.async {
-            SVProgressHUD.dismiss()
-            print(message)
-        }
+    func displayStatements(viewModel: LoginModels.DoLogin.ViewModel) {
+        
     }
     
-    func didFailWithError(_ statementService: StatementService, error: Error) {
-        DispatchQueue.main.async {
-            SVProgressHUD.dismiss()
-            print(error)
-        }
+    func displayError(errorMessage: String) {
+        
     }
+    
+//    func didUpdateExtract(_ statementService: StatementService, statementList: [StatementModel]) {
+//        DispatchQueue.main.async {
+//            self.statementList = statementList
+//            self.tableView.reloadData()
+//            SVProgressHUD.dismiss()
+//        }
+//    }
+//
+//    func didFailWithoutError(_ statementService: StatementService, message: String) {
+//        DispatchQueue.main.async {
+//            SVProgressHUD.dismiss()
+//            print(message)
+//        }
+//    }
+//
+//    func didFailWithError(_ statementService: StatementService, error: Error) {
+//        DispatchQueue.main.async {
+//            SVProgressHUD.dismiss()
+//            print(error)
+//        }
+//    }
 }
 
 // MARK: - UITableDelegate

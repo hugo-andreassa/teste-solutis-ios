@@ -1,31 +1,31 @@
 //
-//  LoginManager.swift
-//  teste-solutis
+//  LoginService.swift
+//  Teste Solutis
 //
-//  Created by Virtual Machine on 02/09/21.
+//  Created by Virtual Machine on 15/09/21.
 //
 
 import Foundation
 
-protocol LoginServiceDelegate {
-    func didPerformLogin(_ loginService: LoginService, username: String, user: UserModel)
-    func didFailWithoutError(_ loginService: LoginService, message: String)
-    func didFailWithError(_ loginService: LoginService, error: Error)
+enum LoginServiceError: String, Error {
+    
+    case invalidRequest = "Ocorreu um erro desconhecido ao fazer a requisição"
+    case invalidParse = "Ocorreu um erro desconhecido ao processar os dados"
+    case invalidParameters = "Usuário ou senha inválido"
+}
+
+extension LoginServiceError: LocalizedError {
+    var errorDescription: String? { return NSLocalizedString(rawValue, comment: "") }
 }
 
 class LoginService {
     
-    var delegate: LoginServiceDelegate?
+    private let apiUrl = NSLocalizedString("ApiURL", comment: "")
     
-    let apiUrl = NSLocalizedString("ApiURL", comment: "")
-    
-    func doLogin(username: String, password: String) {
-        let url = apiUrl + "login"
-        let login = LoginData(username: username, password: password)
-        performRequest(with: url, loginData: login)
-    }
-    
-    func performRequest(with urlString: String, loginData: LoginData) {
+    func performLoginRequest(username: String, password: String, completionHandler: @escaping (Result<UserModel, Error>) -> Void) {
+        let urlString = apiUrl + "login"
+        let loginData = LoginData(username: username, password: password)
+        
         if let url = URL(string: urlString) {
             do {
                 let session = URLSession(configuration: .default)
@@ -36,30 +36,32 @@ class LoginService {
                 
                 let task = session.dataTask(with: request) { data, response, error in
                     if error != nil {
-                        self.delegate?.didFailWithError(self, error: error!)
+                        completionHandler(.failure(LoginServiceError.invalidRequest))
                         return
                     }
                     
                     if (response as! HTTPURLResponse).statusCode > 299 {
-                        self.delegate?.didFailWithoutError(self, message: "Usuário ou senha inválido")
+                        completionHandler(.failure(LoginServiceError.invalidParameters))
                         return
                     }
                     
                     if let safeData = data {
                         if let user = self.parseJson(safeData) {
-                            self.delegate?.didPerformLogin(self, username: loginData.username, user: user)
+                            completionHandler(.success(user))
+                        } else {
+                            completionHandler(.failure(LoginServiceError.invalidParse))
                         }
                     }
                 }
                 
                 task.resume()
             } catch {
-                delegate?.didFailWithError(self, error: error)
+                completionHandler(.failure(LoginServiceError.invalidRequest))
             }
         }
     }
     
-    func parseJson(_ data: Data) -> UserModel? {
+    private func parseJson(_ data: Data) -> UserModel? {
         do {
             let userData = try JSONDecoder().decode(UserData.self, from: data)
             let userModel = UserModel(
@@ -69,7 +71,6 @@ class LoginService {
                 token: userData.token)
             return userModel
         } catch {
-            delegate?.didFailWithError(self, error: error)
             return nil
         }
     }
