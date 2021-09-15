@@ -13,8 +13,8 @@
 import UIKit
 
 protocol HomePresentationLogic {
-    func presentUser(response: Home.DisplayUser.Response)
-    func presentStatements(response: Home.FetchStatements.Response)
+    func presentUser(user: UserModel)
+    func presentStatements(response: HomeModels.FetchStatements.Response)
     func presentError(error: Error)
 }
 
@@ -22,11 +22,11 @@ class HomePresenter: HomePresentationLogic {
     
     var controller: HomeDisplayLogic?
     
-    func presentUser(response: Home.DisplayUser.Response) {
-        
+    func presentUser(user: UserModel) {
+        controller?.displayUser(viewModel: HomeModels.DisplayUser.ViewModel(user: user))
     }
     
-    func presentStatements(response: Home.FetchStatements.Response) {
+    func presentStatements(response: HomeModels.FetchStatements.Response) {
         
     }
     

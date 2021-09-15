@@ -13,21 +13,28 @@
 import UIKit
 
 protocol HomeBusinessLogic {
-    func displayUser(request: Home.DisplayUser.Request)
-    func fetchStatements(request: Home.FetchStatements.Request)
+    func displayUser(request: HomeModels.DisplayUser.Request)
+    func fetchStatements(request: HomeModels.FetchStatements.Request)
 }
 
-class HomeInteractor: HomeBusinessLogic {
+protocol HomeDataStore {
+    var user: UserModel? { get set }
+    var statements: [StatementModel]? { get }
+}
+
+class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     
     var presenter: HomePresentationLogic?
     var worker: HomeWorker?
     
-    func displayUser(request: Home.DisplayUser.Request) {
-        let response = Home.DisplayUser.Response(user: request.user)
-        presenter?.presentUser(response: response)
+    var user: UserModel?
+    var statements: [StatementModel]?
+    
+    func displayUser(request: HomeModels.DisplayUser.Request) {
+        presenter?.presentUser(user: user!)
     }
     
-    func fetchStatements(request: Home.FetchStatements.Request) {
+    func fetchStatements(request: HomeModels.FetchStatements.Request) {
         worker = HomeWorker()
         worker?.fetchStatements()
         

@@ -21,6 +21,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var btnLogin: UIButton!
     
     var interactor: LoginBusinessLogic?
+    var router: (NSObjectProtocol & LoginRoutingLogic & LoginDataPassing)?
     var user: UserModel?
     
     override func viewDidLoad() {
@@ -45,10 +46,15 @@ class LoginViewController: UIViewController {
     private func setupVIP() {
         let interactor = LoginInteractor()
         let presenter = LoginPresenter()
+        let router = LoginRouter()
         
         self.interactor = interactor
         interactor.presenter = presenter
         presenter.controller = self
+        
+        self.router = router
+        router.viewController = self
+        router.dataStore = interactor
     }
     
     private func showErrorAlert(message: String) {
@@ -74,7 +80,7 @@ extension LoginViewController: LoginDisplayLogic {
     func displayUser(viewModel: LoginModels.DoLogin.ViewModel) {
         DispatchQueue.main.async {
             SVProgressHUD.dismiss()
-            print(viewModel.user?.name ?? "")
+            self.router?.routeToHome(segue: nil)
         }
     }
     

@@ -12,11 +12,10 @@
 
 import UIKit
 
-enum Home {
+enum HomeModels {
   
     enum DisplayUser {
         struct Request {
-            var user: UserModel
         }
         
         struct Response {

@@ -9,7 +9,7 @@ import UIKit
 import SVProgressHUD
 
 protocol HomeDisplayLogic {
-    func displayUser(viewModel: LoginModels.DoLogin.ViewModel)
+    func displayUser(viewModel: HomeModels.DisplayUser.ViewModel)
     func displayStatements(viewModel: LoginModels.DoLogin.ViewModel)
     func displayError(errorMessage: String)
 }
@@ -23,13 +23,21 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var saldoField: UILabel!
     
     var interactor: HomeBusinessLogic?
-    var user: UserModel?
+    var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
+    
+    
     var statementList: [StatementModel] = []
+    
+    required init?(coder aDecoder: NSCoder) {
+      super.init(coder: aDecoder)
+      setupVIP()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupVIP()
+        SVProgressHUD.show()
+        
         setGradient()
         setupUserData()
         requestStatementData()
@@ -53,14 +61,19 @@ class HomeViewController: UIViewController {
     private func setupVIP() {
         let interactor = HomeInteractor()
         let presenter = HomePresenter()
+        let router = HomeRouter()
         
         self.interactor = interactor
         interactor.presenter = presenter
         presenter.controller = self
+        
+        self.router = router
+        router.viewController = self
+        router.dataStore = interactor
     }
     
     func setupUserData() {
-        interactor?.displayUser(request: Home.DisplayUser.Request(user: user!))
+        interactor?.displayUser(request: HomeModels.DisplayUser.Request())
         
 //        if let safeUser = user {
 //            self.nomeField.text = safeUser.name
@@ -70,11 +83,8 @@ class HomeViewController: UIViewController {
     }
     
     func requestStatementData() {
-        if let token = user?.token {
-            SVProgressHUD.show()
-            
-            // statementService.getExtract(token: token)
-        }
+        SVProgressHUD.show()
+        // statementService.getExtract(token: token)
     }
     
     @IBAction func exitPressed(_ sender: Any) {
@@ -94,10 +104,14 @@ class HomeViewController: UIViewController {
 
 // MARK: - HomeServiceDelegate
 extension HomeViewController: HomeDisplayLogic {
-    func displayUser(viewModel: LoginModels.DoLogin.ViewModel) {
-        self.nomeField.text = viewModel.user?.name
-        self.cpfField.text = viewModel.user?.formattedCPF
-        self.saldoField.text = viewModel.user?.formattedBalance
+    func displayUser(viewModel: HomeModels.DisplayUser.ViewModel) {
+        DispatchQueue.main.async {
+            SVProgressHUD.dismiss()
+            
+            self.nomeField.text = viewModel.user.name
+            self.cpfField.text = viewModel.user.formattedCPF
+            self.saldoField.text = viewModel.user.formattedBalance
+        }
     }
     
     func displayStatements(viewModel: LoginModels.DoLogin.ViewModel) {

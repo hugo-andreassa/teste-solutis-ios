@@ -11,7 +11,11 @@ protocol LoginBusinessLogic {
     func doLogin(request: LoginModels.DoLogin.Request)
 }
 
-class LoginInteractor: LoginBusinessLogic {
+protocol LoginDataStore {
+  var user: UserModel? { get }
+}
+
+class LoginInteractor: LoginBusinessLogic, LoginDataStore {
     
     var presenter: LoginPresentationLogic?
     
@@ -23,6 +27,7 @@ class LoginInteractor: LoginBusinessLogic {
         loginWorker.doLogin(username: request.username, password: request.password) { result in
             switch result {
                 case .success(let user):
+                    self.user = user
                     self.presenter?.presentUser(.init(user: user))
                     return
                 

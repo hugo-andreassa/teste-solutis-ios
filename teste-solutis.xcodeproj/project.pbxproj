@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8F6A512F84D754F9E148B402 /* Pods_teste_solutis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EFBBC2B76D0F24384C56F09 /* Pods_teste_solutis.framework */; };
+		BA06268526F290DD00145730 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA06268426F290DD00145730 /* LoginRouter.swift */; };
 		BA59021526E12A060019FDAE /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA59021426E12A060019FDAE /* UserModel.swift */; };
 		BA59021726E13E200019FDAE /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA59021626E13E200019FDAE /* LoginService.swift */; };
 		BA59021B26E145460019FDAE /* ValidationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA59021A26E145460019FDAE /* ValidationUtils.swift */; };
@@ -41,6 +42,7 @@
 		54A664BBA355159A868B7693 /* Pods-teste-solutis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teste-solutis.debug.xcconfig"; path = "Target Support Files/Pods-teste-solutis/Pods-teste-solutis.debug.xcconfig"; sourceTree = "<group>"; };
 		5B7392CA63D47031F9231393 /* Pods-teste-solutis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teste-solutis.release.xcconfig"; path = "Target Support Files/Pods-teste-solutis/Pods-teste-solutis.release.xcconfig"; sourceTree = "<group>"; };
 		6EFBBC2B76D0F24384C56F09 /* Pods_teste_solutis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_teste_solutis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA06268426F290DD00145730 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		BA59021426E12A060019FDAE /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		BA59021626E13E200019FDAE /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		BA59021A26E145460019FDAE /* ValidationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationUtils.swift; sourceTree = "<group>"; };
@@ -139,8 +141,9 @@
 				BA6F48CD26DD481600693876 /* LoginViewController.swift */,
 				BA6A2B4726F25A44000A3B03 /* LoginInteractor.swift */,
 				BA6A2B4626F25A44000A3B03 /* LoginPresenter.swift */,
-				BA6A2B4526F25A44000A3B03 /* LoginModels.swift */,
 				BA6A2B4826F25A44000A3B03 /* LoginWorker.swift */,
+				BA06268426F290DD00145730 /* LoginRouter.swift */,
+				BA6A2B4526F25A44000A3B03 /* LoginModels.swift */,
 			);
 			path = LoginScene;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				BA59022026E15A2B0019FDAE /* HomeViewController.swift in Sources */,
 				BA59022226E171EF0019FDAE /* StatementTableViewCell.swift in Sources */,
 				BA6F48CA26DD481600693876 /* AppDelegate.swift in Sources */,
+				BA06268526F290DD00145730 /* LoginRouter.swift in Sources */,
 				BA62325326E28FAE00D0D438 /* StatementModel.swift in Sources */,
 				BA6A2B5326F26038000A3B03 /* HomePresenter.swift in Sources */,
 				BA6F48CC26DD481600693876 /* SceneDelegate.swift in Sources */,

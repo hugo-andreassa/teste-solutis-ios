@@ -12,21 +12,21 @@
 
 import UIKit
 
-//@objc protocol HomeRoutingLogic
-//{
-//  //func routeToSomewhere(segue: UIStoryboardSegue?)
-//}
-//
-//protocol HomeDataPassing
-//{
-//  var dataStore: HomeDataStore? { get }
-//}
-//
-//class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing
-//{
-//  weak var viewController: HomeViewController?
-//  var dataStore: HomeDataStore?
+@objc protocol HomeRoutingLogic {
+
+}
+
+protocol HomeDataPassing {
+  var dataStore: HomeDataStore? { get }
+}
+
+class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing {
+    
+  weak var viewController: HomeViewController?
+  var dataStore: HomeDataStore?
   
+    
+    
   // MARK: Routing
   
   //func routeToSomewhere(segue: UIStoryboardSegue?)
@@ -57,4 +57,4 @@ import UIKit
   //{
   //  destination.name = source.name
   //}
-//}
+}
