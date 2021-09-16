@@ -8,7 +8,8 @@
 import Foundation
 
 protocol LoginBusinessLogic {
-    func doLogin(request: LoginModels.DoLogin.Request)
+    func retrieveSavedUsername(request: LoginModels.SavedUsername.Request)
+    func doLogin(request: LoginModels.Login.Request)
 }
 
 protocol LoginDataStore {
@@ -16,13 +17,18 @@ protocol LoginDataStore {
 }
 
 class LoginInteractor: LoginBusinessLogic, LoginDataStore {
-    
+
     var presenter: LoginPresentationLogic?
     
     var loginWorker = LoginWorker()
     var user: UserModel?
     
-    func doLogin(request: LoginModels.DoLogin.Request) {
+    func retrieveSavedUsername(request: LoginModels.SavedUsername.Request) {
+        let username = loginWorker.retrieveSavedUsername()
+        presenter?.presentUsername(LoginModels.SavedUsername.Response(username: username))
+    }
+    
+    func doLogin(request: LoginModels.Login.Request) {
 
         loginWorker.doLogin(username: request.username, password: request.password) { result in
             switch result {

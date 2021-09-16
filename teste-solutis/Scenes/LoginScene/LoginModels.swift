@@ -9,7 +9,7 @@ import Foundation
 
 class LoginModels {
     
-    enum DoLogin {
+    enum Login {
         struct Request {
             var username: String
             var password: String
@@ -21,12 +21,19 @@ class LoginModels {
         
         struct ViewModel {
             var user: UserModel?
-            
-            struct LoginError {
-                var error: Error?
-                var message: String
-            }
+        }
+    }
+    
+    enum SavedUsername {
+        struct Request {
         }
         
+        struct Response {
+            var username: String
+        }
+        
+        struct ViewModel {
+            var username: String
+        }
     }
 }

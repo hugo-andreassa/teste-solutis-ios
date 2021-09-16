@@ -7,23 +7,23 @@
 
 import Foundation
 
-protocol StatementServiceDelegate {
-    func didUpdateExtract(_ statementService: StatementService, statementList: [StatementModel])
-    func didFailWithoutError(_ statementService: StatementService, message: String)
-    func didFailWithError(_ statementService: StatementService, error: Error)
+enum StatementServiceError: String, Error {
+    
+    case invalidRequest = "Ocorreu um erro desconhecido ao fazer a requisição"
+    case invalidParse = "Ocorreu um erro desconhecido ao processar os dados"
+}
+
+extension StatementServiceError: LocalizedError {
+    var errorDescription: String? { return NSLocalizedString(rawValue, comment: "") }
 }
 
 class StatementService {
-    var delegate: StatementServiceDelegate?
     
-    let apiUrl = NSLocalizedString("ApiURL", comment: "")
+    private let apiUrl = NSLocalizedString("ApiURL", comment: "")
     
-    func getExtract(token: String) {
-        let url = apiUrl + "extrato"
-        performRequest(with: url, token: token)
-    }
-    
-    func performRequest(with urlString: String, token: String) {
+    func fetchStatements(token: String, completionHandler: @escaping (Result<[StatementModel], Error>) -> Void) {
+        let urlString = apiUrl + "extrato"
+        
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
             var request = URLRequest(url: url)
@@ -33,18 +33,20 @@ class StatementService {
             
             let task = session.dataTask(with: request) { data, response, error in
                 if error != nil {
-                    self.delegate?.didFailWithError(self, error: error!)
+                    completionHandler(.failure(StatementServiceError.invalidRequest))
                     return
                 }
                 
                 if (response as! HTTPURLResponse).statusCode > 299 {
-                    self.delegate?.didFailWithoutError(self, message: "Ocorreu um erro desconhecido")
+                    completionHandler(.failure(StatementServiceError.invalidRequest))
                     return
                 }
                 
                 if let safeData = data {
-                    if let extractList = self.parseJson(safeData) {
-                        self.delegate?.didUpdateExtract(self, statementList: extractList)
+                    if let statementList = self.parseJson(safeData) {
+                        completionHandler(.success(statementList))
+                    } else {
+                        completionHandler(.failure(StatementServiceError.invalidParse))
                     }
                 }
             }
@@ -53,7 +55,7 @@ class StatementService {
         }
     }
     
-    func parseJson(_ data: Data) -> [StatementModel]? {
+    private func parseJson(_ data: Data) -> [StatementModel]? {
         do {
             let statementData = try JSONDecoder().decode([StatementData].self, from: data)
             var statementList: [StatementModel] = []
@@ -65,7 +67,6 @@ class StatementService {
             
             return statementList
         } catch {
-            delegate?.didFailWithError(self, error: error)
             return nil
         }
     }

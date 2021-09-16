@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import KeychainSwift
 
 enum LoginWorkerError: String, Error {
     case invalidUsername = "Email inválido"
@@ -34,9 +35,30 @@ class LoginWorker {
         }
         
         loginService.performLoginRequest(username: username, password: password) { result in
+
+            switch result {
+                case .success(_):
+                    self.saveUsername(username)
+                    break
+                case .failure(_):
+                    break
+            }
+            
             completionHandler(result)
             return
         }
+    }
+    
+    func retrieveSavedUsername() -> String {
+        let keychain = KeychainSwift()
+        let username = keychain.get("kUsername")
+        
+        return username ?? ""
+    }
+    
+    private func saveUsername(_ username: String) {
+        let keychain = KeychainSwift()
+        keychain.set(username, forKey: "kUsername")
     }
     
     private func isUsernameValid(_ username: String) -> Bool {

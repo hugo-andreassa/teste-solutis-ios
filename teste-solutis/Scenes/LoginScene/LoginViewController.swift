@@ -10,7 +10,8 @@ import SVProgressHUD
 import KeychainSwift
 
 protocol LoginDisplayLogic {
-    func displayUser(viewModel: LoginModels.DoLogin.ViewModel)
+    func displayUser(viewModel: LoginModels.Login.ViewModel)
+    func displayUsername(viewModel: LoginModels.SavedUsername.ViewModel)
     func displayError(errorMessage: String)
 }
 
@@ -24,23 +25,23 @@ class LoginViewController: UIViewController {
     var router: (NSObjectProtocol & LoginRoutingLogic & LoginDataPassing)?
     var user: UserModel?
     
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupVIP()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI()
-        setupVIP()
+        requestUsername()
     }
     
     @IBAction func loginPressed(_ sender: UIButton) {
         guard let username = fieldUser.text, let password = fieldPassword.text else { return }
         
         SVProgressHUD.show()
-        let request = LoginModels.DoLogin.Request(username: username, password: password)
+        let request = LoginModels.Login.Request(username: username, password: password)
         interactor?.doLogin(request: request)
-    }
-    
-    private func setupUI() {
-        btnLogin.layer.cornerRadius = 22
     }
     
     private func setupVIP() {
@@ -57,6 +58,10 @@ class LoginViewController: UIViewController {
         router.dataStore = interactor
     }
     
+    private func requestUsername() {
+        interactor?.retrieveSavedUsername(request: LoginModels.SavedUsername.Request())
+    }
+    
     private func showErrorAlert(message: String) {
         let alert = UIAlertController(title: "Atenção", message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "Ok", style: .cancel, handler: {_ in
@@ -66,18 +71,17 @@ class LoginViewController: UIViewController {
         
         present(alert, animated: true, completion: nil)
     }
-
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "homeController" {
-//            let controller = segue.destination as! HomeViewController
-//            controller.user = user
-//        }
-//    }
 }
 
 // MARK: - Login Display Logic
 extension LoginViewController: LoginDisplayLogic {
-    func displayUser(viewModel: LoginModels.DoLogin.ViewModel) {
+    func displayUsername(viewModel: LoginModels.SavedUsername.ViewModel) {
+        DispatchQueue.main.async {
+            self.fieldUser.text = viewModel.username
+        }
+    }
+    
+    func displayUser(viewModel: LoginModels.Login.ViewModel) {
         DispatchQueue.main.async {
             SVProgressHUD.dismiss()
             self.router?.routeToHome(segue: nil)

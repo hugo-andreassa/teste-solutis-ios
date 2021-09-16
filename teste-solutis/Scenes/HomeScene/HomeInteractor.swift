@@ -35,9 +35,20 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     }
     
     func fetchStatements(request: HomeModels.FetchStatements.Request) {
-        worker = HomeWorker()
-        worker?.fetchStatements()
-        
-        // Present
+        if let token = user?.token {
+            worker = HomeWorker()
+            worker?.fetchStatements(token: token) { result in
+                switch result {
+                    case .success(let statements):
+                        self.statements = statements
+                        self.presenter?.presentStatements(response: .init(statements: statements))
+                        return
+                    
+                    case .failure(let e):
+                        self.presenter?.presentError(error: e)
+                        return
+                }
+            }
+        }
     }
 }

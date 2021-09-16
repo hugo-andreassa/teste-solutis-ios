@@ -27,10 +27,10 @@ class HomePresenter: HomePresentationLogic {
     }
     
     func presentStatements(response: HomeModels.FetchStatements.Response) {
-        
+        controller?.displayStatements(viewModel: .init(statements: response.statements))
     }
     
     func presentError(error: Error) {
-        
+        controller?.displayError(errorMessage: error.localizedDescription)
     }
 }

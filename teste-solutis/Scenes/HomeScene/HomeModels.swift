@@ -32,11 +32,11 @@ enum HomeModels {
         }
         
         struct Response {
-            var statement: [StatementModel]
+            var statements: [StatementModel]
         }
         
         struct ViewModel {
-            var statement: [StatementModel]
+            var statements: [StatementModel]
         }
     }
 }

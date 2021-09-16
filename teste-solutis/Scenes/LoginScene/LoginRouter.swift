@@ -12,8 +12,7 @@
 
 import UIKit
 
-@objc protocol LoginRoutingLogic
-{
+@objc protocol LoginRoutingLogic {
     func routeToHome(segue: UIStoryboardSegue?)
 }
 

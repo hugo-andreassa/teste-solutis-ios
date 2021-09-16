@@ -13,7 +13,7 @@
 import UIKit
 
 @objc protocol HomeRoutingLogic {
-
+    func routeToLogin(segue: UIStoryboardSegue?)
 }
 
 protocol HomeDataPassing {
@@ -22,39 +22,31 @@ protocol HomeDataPassing {
 
 class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing {
     
-  weak var viewController: HomeViewController?
-  var dataStore: HomeDataStore?
-  
+    weak var viewController: HomeViewController?
+    var dataStore: HomeDataStore?
     
-    
-  // MARK: Routing
-  
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
-  //{
-  //  if let segue = segue {
-  //    let destinationVC = segue.destination as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //  } else {
-  //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-  //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-  //  }
-  //}
+    // MARK: Route
+    func routeToLogin(segue: UIStoryboardSegue?) {
+        if let segue = segue {
+            let destinationVC = segue.destination as! LoginViewController
+            var destinationDS = destinationVC.router!.dataStore!
+            passDataToLogin(source: dataStore!, destination: &destinationDS)
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let destinationVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            var destinationDS = destinationVC.router!.dataStore!
+            passDataToLogin(source: dataStore!, destination: &destinationDS)
+            navigateToLogin(source: viewController!, destination: destinationVC)
+        }
+    }
 
-  // MARK: Navigation
-  
-  //func navigateToSomewhere(source: HomeViewController, destination: SomewhereViewController)
-  //{
-  //  source.show(destination, sender: nil)
-  //}
-  
-  // MARK: Passing data
-  
-  //func passDataToSomewhere(source: HomeDataStore, destination: inout SomewhereDataStore)
-  //{
-  //  destination.name = source.name
-  //}
+    // MARK: Navigation
+    func navigateToLogin(source: HomeViewController, destination: LoginViewController) {
+        source.show(destination, sender: nil)
+    }
+    
+    // MARK: Passing data
+    func passDataToLogin(source: HomeDataStore, destination: inout LoginDataStore) {
+        
+    }
 }

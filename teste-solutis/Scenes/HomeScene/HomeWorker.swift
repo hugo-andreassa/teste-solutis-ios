@@ -11,10 +11,17 @@
 //
 
 import UIKit
+import Foundation
+import KeychainSwift
 
 class HomeWorker {
-    
-    func fetchStatements() {
-        
+
+    private let validation = ValidationUtils()
+    private let statementService = StatementService()
+
+    func fetchStatements(token: String, completionHandler: @escaping (Result<[StatementModel], Error>) -> Void) {
+        statementService.fetchStatements(token: token) { result in
+            completionHandler(result)
+        }
     }
 }
