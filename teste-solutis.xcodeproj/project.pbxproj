@@ -183,10 +183,10 @@
 			isa = PBXGroup;
 			children = (
 				BA59021C26E14A470019FDAE /* Supporting Files */,
+				BA59021826E142980019FDAE /* Services */,
 				BA6F48DE26DD48E500693876 /* Models */,
 				BA6F48DD26DD48DF00693876 /* Views */,
 				BA6F48DF26DD48EA00693876 /* Scenes */,
-				BA59021826E142980019FDAE /* Services */,
 				BA59021926E1452C0019FDAE /* Utils */,
 			);
 			path = "teste-solutis";
