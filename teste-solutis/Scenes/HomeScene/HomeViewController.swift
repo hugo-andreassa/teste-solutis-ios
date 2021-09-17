@@ -8,6 +8,12 @@
 import UIKit
 import SVProgressHUD
 
+protocol HomeDisplayLogic {
+    func displayUser(viewModel: HomeModels.DisplayUser.ViewModel)
+    func displayStatements(viewModel: HomeModels.FetchStatements.ViewModel)
+    func displayError(errorMessage: String)
+}
+
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -16,21 +22,27 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var cpfField: UILabel!
     @IBOutlet weak var saldoField: UILabel!
     
-    var statementService = StatementService()
-    var user: UserModel?
+    var interactor: HomeBusinessLogic?
+    var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
+    
     var statementList: [StatementModel] = []
+    
+    required init?(coder aDecoder: NSCoder) {
+      super.init(coder: aDecoder)
+      setupVIP()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        statementService.delegate = self
         
-        setGradient()
+        SVProgressHUD.show()
+        
+        setupGradient()
         setupUserData()
         requestStatementData()
     }
     
-    func setGradient() {
+    func setupGradient() {
         let gradient = CAGradientLayer()
         
         gradient.frame = self.gradientView!.bounds
@@ -45,25 +57,33 @@ class HomeViewController: UIViewController {
         self.gradientView.layer.insertSublayer(gradient, at: 0)
     }
     
+    private func setupVIP() {
+        let interactor = HomeInteractor()
+        let presenter = HomePresenter()
+        let router = HomeRouter()
+        
+        self.interactor = interactor
+        interactor.presenter = presenter
+        presenter.controller = self
+        
+        self.router = router
+        router.viewController = self
+        router.dataStore = interactor
+    }
+    
     func setupUserData() {
-        if let safeUser = user {
-            self.nomeField.text = safeUser.name
-            self.cpfField.text = safeUser.formattedCPF
-            self.saldoField.text = safeUser.formattedBalance
-        }
+        interactor?.displayUser(request: HomeModels.DisplayUser.Request())
     }
     
     func requestStatementData() {
-        if let token = user?.token {
-            SVProgressHUD.show()
-            statementService.getExtract(token: token)
-        }
+        interactor?.fetchStatements(request: HomeModels.FetchStatements.Request())
     }
     
     @IBAction func exitPressed(_ sender: Any) {
         let alert = UIAlertController(title: "Atenção", message: "Deseja mesmo sair?", preferredStyle: .alert)
         let sairAction = UIAlertAction(title: "Sair", style: .default, handler: {_ in
-            self.performSegue(withIdentifier: "loginController", sender: self)
+            self.router?.routeToLogin(segue: nil)
+            // self.performSegue(withIdentifier: "loginController", sender: self)
         })
         let cancelarAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: {_ in
             self.dismiss(animated: true, completion: nil)
@@ -75,27 +95,28 @@ class HomeViewController: UIViewController {
     }
 }
 
-// MARK: - HomeServiceDelegate
-extension HomeViewController: StatementServiceDelegate {
-    func didUpdateExtract(_ statementService: StatementService, statementList: [StatementModel]) {
+// MARK: - Home Display Logic
+extension HomeViewController: HomeDisplayLogic {
+    func displayUser(viewModel: HomeModels.DisplayUser.ViewModel) {
         DispatchQueue.main.async {
-            self.statementList = statementList
+            self.nomeField.text = viewModel.user.name
+            self.cpfField.text = viewModel.user.formattedCPF
+            self.saldoField.text = viewModel.user.formattedBalance
+        }
+    }
+    
+    func displayStatements(viewModel: HomeModels.FetchStatements.ViewModel) {
+        DispatchQueue.main.async {
+            self.statementList = viewModel.statements
             self.tableView.reloadData()
             SVProgressHUD.dismiss()
         }
     }
     
-    func didFailWithoutError(_ statementService: StatementService, message: String) {
+    func displayError(errorMessage: String) {
         DispatchQueue.main.async {
             SVProgressHUD.dismiss()
-            print(message)
-        }
-    }
-    
-    func didFailWithError(_ statementService: StatementService, error: Error) {
-        DispatchQueue.main.async {
-            SVProgressHUD.dismiss()
-            print(error)
+            print(errorMessage)
         }
     }
 }
