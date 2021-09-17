@@ -14,7 +14,6 @@
 		BA59021B26E145460019FDAE /* ValidationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA59021A26E145460019FDAE /* ValidationUtils.swift */; };
 		BA59021E26E14A6E0019FDAE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA59021D26E14A6E0019FDAE /* Localizable.strings */; };
 		BA59022026E15A2B0019FDAE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA59021F26E15A2B0019FDAE /* HomeViewController.swift */; };
-		BA59022226E171EF0019FDAE /* StatementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA59022126E171EF0019FDAE /* StatementTableViewCell.swift */; };
 		BA62325126E26C4000D0D438 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62325026E26C4000D0D438 /* CardView.swift */; };
 		BA62325326E28FAE00D0D438 /* StatementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62325226E28FAE00D0D438 /* StatementModel.swift */; };
 		BA62325526E2965000D0D438 /* StatementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62325426E2964F00D0D438 /* StatementService.swift */; };
@@ -36,6 +35,7 @@
 		BA6F48E126DD492600693876 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F48E026DD492600693876 /* UserData.swift */; };
 		BA6F48E326DD4A1F00693876 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F48E226DD4A1F00693876 /* LoginData.swift */; };
 		BA6F48E526DD4B1D00693876 /* StatementData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F48E426DD4B1D00693876 /* StatementData.swift */; };
+		BA7C014326F4F9A800F822F1 /* StatementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7C014226F4F9A800F822F1 /* StatementCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +48,6 @@
 		BA59021A26E145460019FDAE /* ValidationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationUtils.swift; sourceTree = "<group>"; };
 		BA59021D26E14A6E0019FDAE /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		BA59021F26E15A2B0019FDAE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		BA59022126E171EF0019FDAE /* StatementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StatementTableViewCell.swift; path = "teste-solutis/Views/Cells/StatementTableViewCell.swift"; sourceTree = "<group>"; };
 		BA62325026E26C4000D0D438 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		BA62325226E28FAE00D0D438 /* StatementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementModel.swift; sourceTree = "<group>"; };
 		BA62325426E2964F00D0D438 /* StatementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementService.swift; sourceTree = "<group>"; };
@@ -72,6 +71,7 @@
 		BA6F48E026DD492600693876 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		BA6F48E226DD4A1F00693876 /* LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
 		BA6F48E426DD4B1D00693876 /* StatementData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementData.swift; sourceTree = "<group>"; };
+		BA7C014226F4F9A800F822F1 /* StatementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StatementCell.swift; path = "teste-solutis/Views/Cells/StatementCell.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +129,7 @@
 		BA62325626E2C37A00D0D438 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				BA59022126E171EF0019FDAE /* StatementTableViewCell.swift */,
+				BA7C014226F4F9A800F822F1 /* StatementCell.swift */,
 			);
 			name = Cells;
 			path = ../Cells;
@@ -365,7 +365,6 @@
 				BA6A2B4926F25A44000A3B03 /* LoginModels.swift in Sources */,
 				BA6A2B5626F26038000A3B03 /* HomeModels.swift in Sources */,
 				BA59022026E15A2B0019FDAE /* HomeViewController.swift in Sources */,
-				BA59022226E171EF0019FDAE /* StatementTableViewCell.swift in Sources */,
 				BA6F48CA26DD481600693876 /* AppDelegate.swift in Sources */,
 				BA06268526F290DD00145730 /* LoginRouter.swift in Sources */,
 				BA62325326E28FAE00D0D438 /* StatementModel.swift in Sources */,
@@ -373,6 +372,7 @@
 				BA6F48CC26DD481600693876 /* SceneDelegate.swift in Sources */,
 				BA6A2B5526F26038000A3B03 /* HomeRouter.swift in Sources */,
 				BA59021B26E145460019FDAE /* ValidationUtils.swift in Sources */,
+				BA7C014326F4F9A800F822F1 /* StatementCell.swift in Sources */,
 				BA62325126E26C4000D0D438 /* CardView.swift in Sources */,
 				BA6A2B5726F26038000A3B03 /* HomeInteractor.swift in Sources */,
 				BA6A2B5426F26038000A3B03 /* HomeWorker.swift in Sources */,
